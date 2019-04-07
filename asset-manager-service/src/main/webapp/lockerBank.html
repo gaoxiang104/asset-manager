@@ -36,7 +36,7 @@
         },
         mounted() {
             axios
-                .get('/ams/lockerBank.do')
+                .get('./ams/lockerBank.do')
                 .then((response) => {
                     this.columnList = response.data.columnList
                 })
