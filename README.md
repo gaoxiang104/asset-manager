@@ -11,6 +11,7 @@ Asset Manager是一个包裹交付管理系统，由几个组件组成。有一�
 * asset-manager-service 用于存放服务端源代码,和前段发布代码
   * 前段使用：Vue.js，axios.js
   * 服务端使用：SpringMVC,XStream,GSON,LOG4J
+  * JDK 1.8 , TOMCAT 8.5
 
 ## 问题
 
