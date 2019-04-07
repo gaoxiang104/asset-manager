@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/ams.css">
+
+    <title>Asset Manager</title>
+</head>
+<body>
+<h1>Asset Manager</h1>
+<div id="app">
+    <hr/>
+    <div class="lockerBank">
+        <div class="column" v-for="column in columnList">
+            <div class="locker" v-for="locker in column.lockersList"
+                 v-bind:class="[locker.size,{lockerH:isLockerH==locker.name}]"
+                 v-on:click="locerClick(locker)">
+                <!--{{locker}}-->
+                <div v-if="!locker.terminal"  class="bt"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            columnList: null,
+            isLockerH: null,
+            timer: null
+        },
+        mounted() {
+            axios
+                .get('/ams/lockerBank.do')
+                .then((response) => {
+                    this.columnList = response.data.columnList
+                })
+        },
+        methods: {
+            locerClick: function (locker) {
+                if(!locker.terminal){
+                    if(null != this.timer){
+                        return;
+                    }
+                    this.timer = setInterval(() => {
+                        this.locerClickFun(locker)
+                    }, 500)
+                    setTimeout(() => {
+                        this.beforeDestroy();
+                    },3005);
+                }
+            },
+
+            locerClickFun: function (locker) {
+                console.log(this.isLockerH)
+                if(!locker.terminal){
+                    if(this.isLockerH==null){
+                        this.isLockerH = locker.name;
+                    }
+                    else {
+                        this.isLockerH = null;
+                    }
+                }
+            },
+
+            beforeDestroy : function () {
+                clearInterval(this.timer);
+                this.timer = null;
+            }
+        }
+    })
+</script>
+</body>
+</html>

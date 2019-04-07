@@ -1,0 +1,58 @@
+.lockerBank {
+    width: 750px;
+    height: 435px;
+    background-color: saddlebrown;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+.column {
+    width: 120px;
+    margin-left: 5px;
+    float: left;
+}
+
+.locker {
+    width: 120px;
+    background-color: rgb(255, 107, 0);
+    margin-top: 5px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.lockerH{
+    background-color: rgb(222, 222, 0);
+}
+
+.bt {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+}
+
+.Small {
+    height: 30px;
+}
+
+.Medium {
+    height: 60px;
+}
+
+.Large {
+    height: 90px;
+}
+
+.ExtraLarge {
+    height: 120px;
+}
+
+.Terminal {
+    height: 170px;
+    background-image: url(../imgs/TerminalImage.png);
+}
