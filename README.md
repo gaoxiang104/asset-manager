@@ -13,6 +13,10 @@ Asset Manager是一个包裹交付管理系统，由几个组件组成。有一�
   * 服务端使用：SpringMVC,XStream,GSON,LOG4J
   * JDK 1.8 , TOMCAT 8.5
 
+## 演示地址
+
+[http://45.32.248.26:8080/ams/lockerBank.html](http://45.32.248.26:8080/ams/lockerBank.html)
+
 ## 问题
 
 1. 目前只支持单个储物柜点击事件；（举例：如果点击A1货柜，且闪烁未结束，点击A2货柜则无效）
