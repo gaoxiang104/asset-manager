@@ -27,6 +27,7 @@ public class LockerBankDto {
 
     @Override
     public String toString() {
+        System.out.println("test");
         return "LockerBankDto{" +
                 "columnList=" + columnList +
                 '}';
